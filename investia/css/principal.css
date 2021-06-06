@@ -1,0 +1,185 @@
+html, body{
+    margin: 0;
+    height: 100vh;
+}
+
+html{
+    background: #306331;
+    min-width: 710px;
+}
+
+/*************************************
+*****  ELEMENTOS EN LA CABECERA  *****
+*************************************/
+
+#divCabecera{
+    position: relative;
+    height: 70px;
+    background: #007adf;
+}
+
+#divCabecera img{
+    position: absolute;
+    top: 8%;
+    left: 10px;
+    height: 56px;
+    width: 287px;
+}
+
+#divUsuario{
+    position: absolute;
+    height: 70px;
+    top: 0px;
+    right: 10px;
+    text-align: right;
+}
+
+#divUsuario p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+#divUsuario a{
+    font-weight: bold;
+    color: #ffff00;
+}
+
+#divUsuario a:hover{
+    color: #f7982c;
+}
+
+/*********************************
+*****  ELEMENTOS EN GENERAL  *****
+*********************************/
+
+#divGeneral{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    height: calc(100% - 120px);
+    width: 100%;
+    min-height: 430px;
+}
+
+#divLateral{
+    min-width: 250px;
+    background: #808080;
+}
+
+#listaMenu{
+    padding: 0px;
+    list-style-type: none;
+    width: 100%;
+}
+
+#listaMenu li{
+    background: #d3d3d3;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    font-size: 40px;
+}
+
+#listaMenu li:hover{
+    background: #f7982c;
+    cursor: pointer;
+}
+
+#divContenido{
+    color: lightgray;
+    overflow: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    direction: rtl;
+}
+
+#divContenido *{
+    direction: ltr;
+}
+
+#divContenido > div {
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+    /***********************
+    ******  RESERVAS  ******
+    ***********************/
+
+    .reservas div > h2:first-child{
+        margin-top: 0;
+    }
+
+    .reservas input[type="date"]{
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+
+    .reservas select{
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+
+    .reservas #divTabla{
+        color: black;
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .reservas table, th, td{
+        border: solid black 1px;
+        border-collapse: collapse;
+        background-color: white;
+    }
+    .reservas th, td{
+        min-width: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .reservas th p{
+        margin: 0;
+    }
+
+    .reservas input[type="button"]{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .reservas #divMsgReserva{
+        display: inline-block;
+        margin: 0;
+        margin-left: 5px;
+        color: #ffff00;
+    }
+
+    .reservas #divMsgReserva h3{
+        margin: 0;
+    }
+
+    /**************************
+    ******  SOLICITUDES  ******
+    **************************/
+
+    .solicitudes table tr td{
+        border: none;
+        background: none;
+    }
+
+    .solicitudes td button{
+        margin-right: 5px;
+    }
+
+/********************************
+*****  ELEMENTOS EN EL PIE  *****
+********************************/
+
+#divPie{
+    background: rgb(0, 122, 223);
+    height: 50px;
+}
