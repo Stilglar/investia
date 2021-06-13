@@ -311,8 +311,8 @@ function fResultadoConsultaReservas()
 {
     if(conexion.readyState == 4 && conexion.status == 200)
     {		
-		fTablaReservas();
-        fEstadoBotones();
+	fTablaReservas();
+	
         var salida = document.getElementById('divMsgReserva');
         var tabla = document.getElementById('tblSemana');
         var filas = tabla.getElementsByTagName('tr');
