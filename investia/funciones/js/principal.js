@@ -48,7 +48,8 @@ function fCargaReservas()
     fInicializarContenido();
     fCambioClase('reservas');
     fInputsReservas();
-    fTablaReservas();
+    fOutputReservas();
+    fBotonesSemana();
 }
 
 function fCargaSolicitudes()
@@ -104,6 +105,18 @@ function fInputsReservas()
     destino.insertAdjacentHTML('beforeend','<div id="divMsgReserva"></div>');
 }
 
+function fOutputReservas()
+{
+     //Selector del elemento dentro del cual se crea la tabla
+     var destino = document.getElementById('divSubContenido2');
+
+     destino.innerHTML = '';
+     destino.insertAdjacentHTML('beforeend','<h2>Estado de la Reserva</h2>');
+     destino.insertAdjacentHTML('beforeend','<div id="divTabla"><table id="tblSemana"></table></div>');
+
+     fTablaReservas();
+}
+
 function fFechaMin()
 {
     var min = document.getElementById('fechaInicio').value;
@@ -140,15 +153,11 @@ function fLlenarHoras(id)
 
 function fTablaReservas()
 {
-    //Selector del elemento dentro del cual se crea la tabla
-    var destino = document.getElementById('divSubContenido2');
-
-    destino.innerHTML = '';
-    destino.insertAdjacentHTML('beforeend','<h2>Estado de la Reserva</h2>');
-    destino.insertAdjacentHTML('beforeend','<div id="divTabla"><table id="tblSemana"></table></div>');
-
+    var destino = document.getElementById('tblSemana');
     var dias = ['Lunes','Martes','Miercoles','Jueves','Viernes'];
     var tabla = '';
+
+    destino.innerHTML = '';
 
     //Construccion de la cabecera de la tabla
 
@@ -195,14 +204,13 @@ function fTablaReservas()
         fila += '</tr>';
         tabla += fila;
     }
-    document.getElementById('tblSemana').insertAdjacentHTML('beforeend',tabla);
-    fBotonesSemana();
+    destino.insertAdjacentHTML('beforeend',tabla);
 }
 
 function fBotonesSemana()
 {
     var destino = document.getElementById('divSubContenido2');
-
+    
     destino.insertAdjacentHTML('beforeend','<input type="button" id="btSemanaAnterior" value="Anterior">');
     document.getElementById('btSemanaAnterior').addEventListener('click',fSemAnterior,false);
 
@@ -312,7 +320,6 @@ function fResultadoConsultaReservas()
     if(conexion.readyState == 4 && conexion.status == 200)
     {		
 	fTablaReservas();
-	
         var salida = document.getElementById('divMsgReserva');
         var tabla = document.getElementById('tblSemana');
         var filas = tabla.getElementsByTagName('tr');
@@ -351,6 +358,7 @@ function fResultadoConsultaReservas()
                 }
 			}
 		});
+        fEstadoBotones();
 	}
 }
 
