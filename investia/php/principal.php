@@ -32,25 +32,16 @@
     <div id="divGeneral">
         <div id="divLateral">
             <ul id="listaMenu">
+                <li onclick="fCargaCompras()" >Compras</li>
+                <li onclick="fCargaViajes()" >Viajes</li>
+                <li onclick="fCargaVacaciones()" >Vacaciones</li>
+                <li onclick="fCargaAnticipos()" >Anticipos</li>
+                <li onclick="fCargaReservas()" >Reservas</li>
                 <?php
-                    if($isAdmin == 0)
+                    if($isAdmin == 2)
                     {
-                        echo '<li onclick="fCargaCompras()" >Compras</li>';
-                        echo '<li onclick="fCargaViajes()" >Viajes</li>';
-                        echo '<li onclick="fCargaVacaciones()" >Vacaciones</li>';
-                        echo '<li onclick="fCargaAnticipos()" >Anticipos</li>';
-                        echo '<li onclick="fCargaReservas()" >Reservas</li>';
-                    }
-                    else if($isAdmin == 2)
-                    {
-                        echo '<li onclick="fCargaCompras()" >Compras</li>';
-                        echo '<li onclick="fCargaViajes()" >Viajes</li>';
-                        echo '<li onclick="fCargaVacaciones()" >Vacaciones</li>';
-                        echo '<li onclick="fCargaAnticipos()" >Anticipos</li>';
-                        echo '<li onclick="fCargaReservas()" >Reservas</li>';
                         echo '<li onclick="fCargaSolicitudes()" >Solicitudes</li>';
                     }
-
                 ?>
             </ul>
         </div>
